@@ -6,7 +6,10 @@ import os
 import time
 from collections import defaultdict
 from contextlib import contextmanager
-from functools import cached_property
+try:
+    from functools import cached_property
+except:
+    from werkzeug.utils import cached_property
 from typing import Optional
 import torch
 from fvcore.common.history_buffer import HistoryBuffer
